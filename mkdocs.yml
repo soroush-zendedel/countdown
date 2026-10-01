@@ -1,8 +1,8 @@
 site_name: "شمارش معکوس، تاریخ جهانی اعداد"
 site_description: "پروژه‌ای درباره‌ی سیر تحول اندیشه‌های عددی و تاریخ شمارش در تمدن‌های گوناگون"
 site_author: Parscasts
-repo_url: https://github.com/parscast/countdown
-site_url: https://parscast.github.io/countdown/
+repo_url: https://github.com/soroush-zendedel/countdown
+site_url: https://soroush-zendedel.github.io/countdown/
 repo_name: گیت‌هاب این کتاب
 edit_uri: edit/main/docs/
 
@@ -73,9 +73,7 @@ extra_javascript:
   - javascripts/init-lightbox.js
 
 plugins:
-   
-#  - search:
-#      lang: ['fa', 'en']
+  - search
 nav:
   - درباره‌ی پروژه: about.md
   - مقدمه:
