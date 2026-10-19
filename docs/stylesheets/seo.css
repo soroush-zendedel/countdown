@@ -1,32 +1,57 @@
 .site-breadcrumbs {
   box-sizing: border-box;
   width: 100%;
-  padding: 0 1.2rem 1rem;
+  margin-top: 1.5rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
   color: var(--md-default-fg-color--light);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
+  line-height: 1.8;
 }
 
-.site-breadcrumbs ol {
+.md-typeset .site-breadcrumbs ol {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 0.35rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
 }
 
-.site-breadcrumbs li:not(:last-child)::after {
-  margin-inline-start: 0.35rem;
+.md-typeset .site-breadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.md-typeset .site-breadcrumbs li::before {
+  content: none !important;
+}
+
+.md-typeset .site-breadcrumbs li:not(:last-child)::after {
+  margin-inline: 0.65rem;
+  color: var(--md-default-fg-color--lightest);
   content: "‹";
 }
 
-.site-breadcrumbs a {
+.md-typeset .site-breadcrumbs a {
   color: var(--md-typeset-a-color);
+  text-decoration: none;
+}
+
+.md-typeset .site-breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.md-typeset .site-breadcrumbs [aria-current="page"] {
+  color: var(--md-default-fg-color--light);
 }
 
 @media screen and (min-width: 76.25em) {
   .site-breadcrumbs {
-    padding-inline-start: 0;
-    padding-inline-end: 0;
+    padding-inline: 0;
   }
 }
