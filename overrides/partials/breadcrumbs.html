@@ -1,0 +1,42 @@
+{# Keep the visible trail and its JSON-LD backed by the same page data. #}
+{% set breadcrumb_items = [
+  {"name": "وب‌سایت اصلی", "item": "https://soroush-zendedel.github.io"},
+  {"name": "شمارش معکوس", "item": config.site_url}
+] %}
+{% set _ = breadcrumb_items.append({
+  "name": page.title | striptags,
+  "item": config.site_url.rstrip("/") ~ "/" ~ page.url
+}) %}
+{% set breadcrumb_list = namespace(items=[]) %}
+{% for item in breadcrumb_items %}
+  {% set _ = breadcrumb_list.items.append({
+    "@type": "ListItem",
+    "position": loop.index,
+    "name": item.name,
+    "item": item.item
+  }) %}
+{% endfor %}
+
+{% if breadcrumb_mode == "json" %}
+  <script type="application/ld+json">
+    {{ {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": breadcrumb_list.items
+    } | tojson }}
+  </script>
+{% else %}
+  <nav class="site-breadcrumbs md-grid" aria-label="مسیر صفحه" dir="rtl">
+    <ol>
+      {% for item in breadcrumb_items %}
+        <li>
+          {% if not loop.last %}
+            <a href="{{ item.item }}">{{ item.name }}</a>
+          {% else %}
+            <span aria-current="page">{{ item.name }}</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+  </nav>
+{% endif %}

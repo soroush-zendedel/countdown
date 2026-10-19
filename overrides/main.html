@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  {% if page.url %}
+    {% set breadcrumb_mode = "json" %}
+    {% include "partials/breadcrumbs.html" %}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  {{ super() }}
+  {% if page.url %}
+    {% set breadcrumb_mode = "visible" %}
+    {% include "partials/breadcrumbs.html" %}
+  {% endif %}
+{% endblock %}

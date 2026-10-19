@@ -46,6 +46,7 @@ theme:
 
 extra_css:
   - stylesheets/rtl-fix.css
+  - stylesheets/seo.css
   - https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css
 markdown_extensions:
   - meta

@@ -85,6 +85,14 @@ GitHub Pages از شاخهٔ `gh-pages` منتشر می‌شود؛ ادغام Pu
 
 [https://soroush-zendedel.github.io/countdown/](https://soroush-zendedel.github.io/countdown/)
 
+### مسیر صفحه‌ها و SEO
+
+- `mkdocs.yml` ریشهٔ انتشار را در `site_url` روی `https://soroush-zendedel.github.io/countdown/` تعیین می‌کند. مسیرهای داخلی، canonical و sitemap خروجی باید زیر همین مسیر باشند؛ ریشهٔ سایت بزرگ‌تر `https://soroush-zendedel.github.io` است.
+- محتوای فعلی فارسی و تک‌زبانه است. نسخهٔ زبانی معادل یا `hreflang` ندارد؛ تا زمان افزودن ترجمه‌های واقعی، alternate زبانی تعریف نکنید.
+- قالب Material از `site_url` برای canonical هر صفحه و تولید `sitemap.xml` استفاده می‌کند. Sitemap در خروجی build ساخته می‌شود و فایل متعلق به ریشهٔ دامنه یا مخزن دیگری نیست. این مخزن robots.txt ندارد؛ آن را فقط در صورت نیاز و با روشن بودن دامنهٔ اثر آن اضافه کنید.
+- قالب مشترک `overrides/main.html` و `overrides/partials/breadcrumbs.html` برای صفحه‌های غیر از صفحهٔ اصلی، Breadcrumb قابل‌مشاهده و `BreadcrumbList` JSON-LD متناظر می‌سازند. هر دو از یک فهرست استفاده می‌کنند: وب‌سایت اصلی، ریشهٔ کتاب و صفحهٔ جاری. صفحهٔ اصلی Breadcrumb ندارد. دادهٔ Article، ProfilePage یا SoftwareApplication اضافه نشده است چون با هدف و محتوای سایت تناسب ندارد.
+- بعد از انتشار، نمونهٔ چند صفحه را در [Rich Results Test](https://search.google.com/test/rich-results) و [URL Inspection](https://search.google.com/search-console) بررسی کنید و گزارش Breadcrumb و وضعیت canonical را در Search Console پیگیری کنید. دادهٔ ساخت‌یافته واجد شرایط بودن را فراهم می‌کند و نمایش rich result را تضمین نمی‌کند.
+
 ---
 
 ## 📄 مجوز

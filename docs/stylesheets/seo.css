@@ -1,0 +1,32 @@
+.site-breadcrumbs {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 1.2rem 1rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.75rem;
+}
+
+.site-breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-breadcrumbs li:not(:last-child)::after {
+  margin-inline-start: 0.35rem;
+  content: "‹";
+}
+
+.site-breadcrumbs a {
+  color: var(--md-typeset-a-color);
+}
+
+@media screen and (min-width: 76.25em) {
+  .site-breadcrumbs {
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+  }
+}
