@@ -869,33 +869,39 @@
 <p>این کتاب به‌صورت <strong>سایت ایستا (Static Site)</strong> با استفاده از ابزار <strong>MkDocs</strong> ساخته شده و برای مطالعه‌ی آزاد در گیت‌هاب منتشر می‌شود.</p>
 <hr />
 <h2 id="_3">🛠️ ساخت پروژه محلی<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>برای اجرای پروژه در محیط محلی (Local):</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/parscast/countdown.git
-<span class="nb">cd</span><span class="w"> </span>countdown
-python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
-<span class="nb">source</span><span class="w"> </span>venv/bin/activate
-pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-mkdocs<span class="w"> </span>serve
+<p>برای پیش‌نمایش محلی، ابتدا وابستگی‌ها را نصب کنید.</p>
+<p><strong>Linux و macOS:</strong></p>
+<div class="highlight"><pre><code>git clone https://github.com/soroush-zendedel/countdown.git
+cd countdown
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+mkdocs serve
 </code></pre></div>
-<p>سپس مرورگر را باز کرده و به آدرس زیر بروید:
-<div class="highlight"><pre><span></span><code>http://127.0.0.1:8000
-</code></pre></div></p>
+<p><strong>Windows PowerShell:</strong></p>
+<div class="highlight"><pre><code>git clone https://github.com/soroush-zendedel/countdown.git
+cd countdown
+py -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\mkdocs.exe serve
+</code></pre></div>
+<p>سپس آدرس زیر را در مرورگر باز کنید:</p>
+<div class="highlight"><pre><code>http://127.0.0.1:8000
+</code></pre></div>
 <hr />
 <h2 id="github-pages">🌐 انتشار در GitHub Pages<a class="headerlink" href="#github-pages" title="Permanent link">&para;</a></h2>
-<p>برای مشارکت در پروژه:  </p>
-<ol>
-<li>ابتدا این مخزن را <strong>Fork</strong> کنید.  </li>
-<li>تغییرات خود را در شاخه‌ی جدید اعمال کرده و سپس <strong>Push</strong> کنید.  </li>
-<li><abbr title="One — نخستین عدد دارای معنا در تاریخ انسان.">یک</abbr> <strong>Pull Request</strong> برای بازبینی و تأیید ارسال کنید.  </li>
-</ol>
-<p>پس از تأیید تغییرات، فایل‌های استاتیک کتاب به‌صورت خودکار ساخته شده و در <strong>GitHub Pages</strong> منتشر خواهند شد.  </p>
-<p><strong>آدرس نهایی</strong>:</p>
-<div class="highlight"><pre><span></span><code>https://parscast.github.io/countdown/
+<p>برای مشارکت، مخزن را Fork کنید، تغییرات را در یک شاخهٔ جداگانه انجام دهید و Pull Request خود را به شاخهٔ <code>main</code> بفرستید.</p>
+<p>پس از ادغام تغییرات در <code>main</code>، نگه‌دارندهٔ سایت باید از ریشهٔ مخزن و با محیط مجازی فعال، سایت را بسازد و منتشر کند:</p>
+<div class="highlight"><pre><code>mkdocs gh-deploy
 </code></pre></div>
+<p>در Windows PowerShell، اگر محیط مجازی را فعال نکرده‌اید، اجرا کنید:</p>
+<div class="highlight"><pre><code>.\.venv\Scripts\mkdocs.exe gh-deploy
+</code></pre></div>
+<p>GitHub Pages از شاخهٔ <code>gh-pages</code> منتشر می‌شود؛ ادغام Pull Request به‌تنهایی سایت را به‌روز نمی‌کند.</p>
+<p><strong>آدرس نهایی:</strong> <a href="https://soroush-zendedel.github.io/countdown/">https://soroush-zendedel.github.io/countdown/</a></p>
 <hr />
 <h2 id="_4">📄 مجوز<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>این پروژه تحت مجوز <strong>Creative Commons Attribution 4.0 (CC BY 4.0)</strong> منتشر می‌شود.
-استفاده، بازنویسی و اشتراک آزاد است؛ تنها ذکر منبع الزامی است.</p>
+<p>این پروژه تحت مجوز <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a> منتشر می‌شود. هنگام بازنشر یا اقتباس، باید به پدیدآورنده اعتبار بدهید، پیوند مجوز را بیاورید و تغییرات انجام‌شده را مشخص کنید.</p>
 <hr />
 <blockquote>
 <p>«قَدْ جَعَلَ اللّٰهُ لِکُلِّ شَیْءٍ قَدْراً» — خداوند برای هر چیز مقدار و‌ اندازه‌ای قرار داده است. (قرآن کریم)</p>
